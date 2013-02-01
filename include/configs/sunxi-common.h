@@ -184,7 +184,9 @@
 	"loadbootenv=fatload mmc 0 $scriptaddr ${bootenv} || ext2load mmc 0 $scriptaddr ${bootenv} || ext2load mmc 0 $scriptaddr boot/${bootenv}\0" \
 	"boot_mmc=fatload mmc 0 0x43000000 script.bin && fatload mmc 0 0x48000000 ${kernel} && watchdog 0 && bootm 0x48000000\0"
 
-#define CONFIG_BOOTDELAY	3
+#define CONFIG_BOOTDELAY	0
+#undef CONFIG_ZERO_BOOTDELAY_CHECK
+
 #define CONFIG_SYS_BOOT_GET_CMDLINE
 #define CONFIG_AUTO_COMPLETE
 
